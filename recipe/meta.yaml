@@ -1,5 +1,5 @@
 {% set name = "fractal-client" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
-  sha256: acc5add56a01860859eb78cabb22482459cd1e2624de0cfbb4b0eab6d957a9b0
+  sha256: 5d24f481339d0d2431177214b2d4b11fbccfeb15523f5d477edef94be4080810
 
 build:
   noarch: python
