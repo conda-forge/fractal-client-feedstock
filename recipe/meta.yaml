@@ -1,5 +1,5 @@
 {% set name = "fractal-client" %}
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
-  sha256: 5d24f481339d0d2431177214b2d4b11fbccfeb15523f5d477edef94be4080810
+  sha256: 0d0386a359595fa6576397b1caa042b7c2009ccb318dabd17bc902fde627baa2
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - fractal = fractal_client.__main__:run
+    - fractal = fractal_client.client:main
   number: 0
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - pip
   run:
     - python >=3.9.0,<4.0.0
-    - python-dotenv >=0.20.0,<0.21.0
+    - python-dotenv >=0.21.0,<0.22.0
     - rich >=12.5.1,<13.0.0
     - httpx >=0.23.0,<0.24.0
     - pyjwt >=2.4.0,<3.0.0
