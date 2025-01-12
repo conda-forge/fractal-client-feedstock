@@ -1,3 +1,4 @@
+{% set python_min = '3.9.0' %}
 {% set name = "fractal-client" %}
 {% set version = "1.4.4" %}
 
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
   sha256: 610842ed1ccd81675f58240b3c7a2c651f89a5d796eb6d6ec1fb78342a9ce3e1
 
 build:
@@ -14,15 +15,15 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - fractal = fractal_client.client:main
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<4.0
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.9.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - python-dotenv >=0.21.0,<0.22.0
     - rich >=12.5.1,<13.0.0
     - httpx >=0.23.0,<0.24.0
@@ -37,6 +38,7 @@ test:
     - fractal --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fractal-analytics-platform/fractal-client
