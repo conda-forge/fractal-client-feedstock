@@ -1,6 +1,6 @@
-{% set python_min = '3.9.0' %}
+{% set python_min = "3.9.0" %}
 {% set name = "fractal-client" %}
-{% set version = "1.4.4" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fractal_client-{{ version }}.tar.gz
-  sha256: 610842ed1ccd81675f58240b3c7a2c651f89a5d796eb6d6ec1fb78342a9ce3e1
+  sha256: 1d41542a9ba24e6f6f403a5c5a9ae095f05d9ee979262dd0fc460bac7e96fccd
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - fractal = fractal_client.client:main
-  number: 1
+  number: 0
 
 requirements:
   host:
