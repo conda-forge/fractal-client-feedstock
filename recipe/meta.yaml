@@ -24,9 +24,9 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<4.0.0
-    - python-dotenv >=0.21.0,<0.22.0
+    - python-dotenv >=1.0.0,<1.1.0
     - rich >=12.5.1,<13.0.0
-    - httpx >=0.23.0,<0.24.0
+    - httpx >=0.27.0,<0.28.0
     - pyjwt >=2.4.0,<3.0.0
     - packaging >=23.1.0,<24.0.0
 
